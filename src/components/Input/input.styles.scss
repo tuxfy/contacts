@@ -1,0 +1,41 @@
+@import '../../global.styles.scss';
+
+@mixin borderPropsAndPadding( $borderRadius, $padding, $type: "" ) {
+    @if( $type == "input" ){
+        border-left: 1px solid $darkGrey;
+        border-right: none;
+    }@else if( $type == "icon" ){
+        border-right: 1px solid $darkGrey;
+    }@else{
+        border-left: 1px solid $darkGrey;
+        border-right: 1px solid $darkGrey;
+    }
+    border-top: 1px solid $darkGrey;
+    border-bottom: 1px solid $darkGrey;
+    border-radius: $borderRadius;
+    padding: $padding;
+}
+
+input{
+    @include borderPropsAndPadding(10px, 5px 0 5px 0);
+    &:focus {
+        outline:0;
+    }
+}
+
+.inputContainer {
+    display: flex; 
+    text-align: center;
+    padding: 5px 0 5px 0;   
+    i{
+        width: 50px;
+        font-style: normal; 
+        background-color: $darkerGrey;
+        filter: grayscale(100%);
+        @include borderPropsAndPadding(0 10px 10px 0, 2px, "icon");
+    } 
+    input{
+        flex: 1;
+        @include borderPropsAndPadding(10px 0 0 10px, 5px, "input");
+    }
+}

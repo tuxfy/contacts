@@ -1,0 +1,44 @@
+
+@import "../../global.styles.scss";
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  thead {
+    background-color: $red;
+    color:$white;
+    text-align: left;
+    th {
+      padding: 7px;
+      font-weight: 500;
+    }
+  }
+  tbody {
+    tr {
+      height: 25px;
+      &:nth-child(even) {
+        background: $tableRowBackgroundColorEven;
+      }
+      &:nth-child(odd) {
+        background: $tableRowBackgroundColorOdd;
+      }
+      &:nth-child(even):hover,
+      &:nth-child(odd):hover {
+        background-color: $redOpacity;
+        color: $red;
+        transition-duration: 250ms;
+        transition-delay: 100ms;
+      }
+    }
+    td {
+      padding: 3px;  
+      a {
+        text-decoration: none;
+      }
+    }
+    td,
+    th {
+      border: 1px solid $darkerGrey;
+    }
+  }
+}

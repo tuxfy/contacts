@@ -1,0 +1,32 @@
+$red: rgb(219, 44, 29);
+$redOpacity: rgba(219, 44, 29, 0.15);
+$black: rgb(56, 56, 56);
+$white: white;
+$headingColor: rgb(97, 97, 97);
+$lightGrey: rgb(255, 255, 255);
+$darkerGrey: rgb(248, 247, 247);
+$darkGrey: rgb(179, 179, 179);
+$fontFamily: Tahoma, Geneva, sans-serif;
+
+$buttonBackgroundColor: $white;
+$buttonBackgroundColorHover: $darkerGrey;
+
+$tableRowBackgroundColorEven: $darkerGrey;
+$tableRowBackgroundColorOdd: $lightGrey;
+
+@mixin flexProps {
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    font-family: $fontFamily;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    #root{  
+        display: flex;
+        flex-direction: column;
+        main{
+            margin-top: 20px;
+        }
+    }    
+}

@@ -1,0 +1,9 @@
+@import '../../global.styles.scss';
+
+header {
+  @include flexProps;
+  align-items: center;  
+  h1 {
+    color: $headingColor;
+  }
+}
