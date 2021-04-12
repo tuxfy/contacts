@@ -1,0 +1,14 @@
+[
+	{
+		"name": "All",
+		"id": "",
+		"ou": "",
+		"link": ""
+	},
+	{
+		"name": "OG",
+		"id": "OG",
+		"ou": "OU=organisation,DC=company,DC=de",
+		"link": "og"
+	}
+]
