@@ -1,9 +1,16 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import App from './App'
+import { shallow } from 'enzyme'
+import Enzyme from 'enzyme'
+import Adapter from 'enzyme-adapter-react-16'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+Enzyme.configure({ adapter: new Adapter() })
+
+describe('Contacts Table Component', () => {
+	const wrapper = shallow(<App />)
+
+  it('includes header and main section', () => {
+		expect(wrapper.find('Header').length).toBeGreaterThan(0)
+		expect(wrapper.find('main').length).toBeGreaterThan(0)
+	})
+})
