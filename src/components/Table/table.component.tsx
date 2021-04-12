@@ -32,9 +32,9 @@ const Table: FC<ITable> = ({ data }) => {
 				<tbody>
 					{data
 						.filter(obj => {
-								let objectValues = Object.values(obj)
-								let objectString = JSON.stringify(objectValues).toLocaleLowerCase()
-								return objectString.includes(searchValue.toLocaleLowerCase())
+							let objectValues = Object.values(obj)
+							let objectString = JSON.stringify(objectValues).toLocaleLowerCase()
+							return objectString.includes(searchValue.toLocaleLowerCase())
 						})
 						.map(obj => (
 							<tr key={obj.objectguid}>
