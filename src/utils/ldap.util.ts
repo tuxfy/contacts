@@ -1,3 +1,6 @@
+import testPersonData from './testPersonData.json'
+import testOrganisationData from './testOrganisationData.json'
+
 export interface IPerson {
 	person_guid: string
 	displayname: string
@@ -30,10 +33,15 @@ export const Person: Person = {
 				method: 'POST',
 				headers: headers,
 			})
-			persons = await resp.json()
+				.then(async response => {
+					persons = await response.json()
+				})
+				.catch(error => {
+					console.log('getLdapPersons fetch data -> error', error)
+					persons = testPersonData
+				})
 			sessionStorage.setItem('persons', JSON.stringify(persons))
-		}		
-
+		}
 		return persons
 	},
 }
@@ -64,8 +72,14 @@ export const Organisation: Organisation = {
 				method: 'POST',
 				headers: headers,
 			})
-      organisations = await resp.json()
-      sessionStorage.setItem('organisations', JSON.stringify(organisations))
+				.then(async response => {
+					organisations = await response.json()
+				})
+				.catch(error => {
+					console.log('getLdapOrganisations fetch data -> error', error)
+					organisations = testOrganisationData
+				})
+			sessionStorage.setItem('organisations', JSON.stringify(organisations))
 		}
 		return organisations
 	},
