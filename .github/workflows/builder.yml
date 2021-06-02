@@ -16,3 +16,9 @@ jobs:
         run: npm clean-install
       - name: Run Jest Tests
         run: npm run test
+      - name: Run our App
+        run: nohup npm run start &
+      - name: Run Hawkscan
+        uses: stackhawk/hawkscan-action@v1.2.1
+        with:
+          apiKey: ${{ secrets.HAWK_API_KEY }}
